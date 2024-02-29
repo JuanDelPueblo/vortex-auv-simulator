@@ -6,14 +6,14 @@
   <arg name="paused" default="false"/>
   <arg name="set_timeout" default="false"/>
   <arg name="timeout" default="0.0"/>
-  <arg name="auv" default="beluga"/>
+  <arg name="auv" default="auv"/>
 
   <!-- Remap camera to match the ZED outputs -->
-  <remap from="/auv/auv/camerafront_left/camera_image" to="/zed2/zed_node/rgb/image_rect_color"/>
-  <remap from="/auv/auv/cameraunder/camera_image" to="/udfc/wrapper/camera_rect"/>
+  <!-- <remap from="/auv/auv/camerafront_left/camera_image" to="/zed2/zed_node/rgb/image_rect_color"/>
+  <remap from="/auv/auv/cameraunder/camera_image" to="/udfc/wrapper/camera_rect"/> -->
 
   <!-- This is where the robosub items and pool is launced -->
-  <include file="$(find uuv_descriptions)/launch/robosub2022_pool.launch">
+  <include file="$(find world_descriptions)/launch/robosub2022_pool.launch">
     <arg name="gui" value="$(arg gui)"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="set_timeout" value="$(arg set_timeout)"/>
@@ -21,8 +21,11 @@
   </include>
 
   <!-- This is where the AUV gets spawned -->
-  <include file="$(find beluga_description)/launch/upload_beluga.launch"/>
+  <include file="$(find rexrov2_description)/launch/upload_rexrov2.launch">
+    <arg name="z" value="0.0"/>
+    <arg name="namespace" value="$(arg auv)"/>
+  </include>
 
   <!-- Thrust allocation for the simulator specifically -->
-  <include file="$(find gazebo_thruster_manager)/launch/thruster_manager.launch"/>
+  <include file="$(find rexrov2_control)/launch/start_thruster_manager.launch"/>
 </launch>
