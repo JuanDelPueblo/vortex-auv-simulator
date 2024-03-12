@@ -24,5 +24,6 @@
   <include file="$(find beluga_description)/launch/upload_beluga.launch"/>
 
   <!-- Thrust allocation for the simulator specifically -->
-  <include file="$(find gazebo_thruster_manager)/launch/thruster_manager.launch"/>
+  <!-- <include file="$(find gazebo_thruster_manager)/launch/thruster_manager.launch"/> -->
+  <include file="$(find gazebo_thruster_manager)/launch/start_pid_controller.launch"/>
 </launch>
