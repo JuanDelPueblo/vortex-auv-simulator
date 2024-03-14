@@ -1,0 +1,28 @@
+mass: 35.0
+model: auv
+inertial:
+  ixx: 0.503217
+  iyy: 0.493449
+  izz: 0.919819
+  ixy: 0.000204
+  ixz: -0.000526
+  iyz: 0.000038
+cog: [0, 0, -0.08]
+# CoB represented wrt ENU convention
+cob: [0, 0, 0.05]
+volume: 0.0365
+length: 0.8
+height: 0.4
+width: 0.6
+base_link: base_link
+Ma:
+- [10.7727, 0, 0, 0, 0, 0] 
+- [0, 10.7727, 0, 0, 0, 0]
+- [0, 0, 49.7679, 0, 0, 0]
+- [0, 0, 0, 1.0092, 0, 0]
+- [0, 0, 0, 0, 1.0092, 0]
+- [0, 0,  0,  0,  0,  0]
+# In the model, the damping coefficients are pre-multiplied by -1
+linear_damping: [-19.5909, -19.5909, -50.5595, -13.3040, -13.2181, -1.1559]
+quad_damping: [-5.1386, -5.1386, -26.1105, 0, 0, 0]
+density: 1028.0
