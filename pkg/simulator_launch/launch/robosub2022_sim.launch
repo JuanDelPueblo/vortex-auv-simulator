@@ -25,5 +25,5 @@
 
   <!-- Thrust allocation for the simulator specifically -->
   <!-- <include file="$(find gazebo_thruster_manager)/launch/thruster_manager.launch"/> -->
-  <include file="$(find gazebo_thruster_manager)/launch/start_pid_controller.launch"/>
+  <include file="$(find gazebo_thruster_manager)/launch/start_sf_controller.launch"/>
 </launch>
